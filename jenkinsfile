@@ -19,5 +19,8 @@ pipeline {
                 sh 'venv/bin/python -m pip install flask waitress pywebview pytest'
             }
         }
+        stage('test') {
+            steps {
+                sh 'venv/bin/python tests/test_app.py'
     }
 }
