@@ -22,5 +22,7 @@ pipeline {
         stage('test') {
             steps {
                 sh 'venv/bin/python tests/test_app.py'
+            }
+        }
     }
 }
