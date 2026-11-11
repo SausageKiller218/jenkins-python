@@ -14,8 +14,8 @@ pipeline {
         }
         stage('build') {
             steps {
-                sh 'python -m venv ~/.venv'
-                sh 'source .venv/bin/activate'
+                sh 'python -m venv venv'
+                sh 'source venv/bin/activate'
 		sh 'which python'
                 sh 'pip install flask waitress pywebview'
             }
