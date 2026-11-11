@@ -15,13 +15,13 @@ pipeline {
         stage('build') {
             steps {
                 sh 'python -m venv venv'
-                sh 'venv/bin/python -v'
+                sh 'venv/bin/python -V'
                 sh 'venv/bin/python -m pip install flask waitress pywebview pytest'
             }
         }
         stage('test') {
             steps {
-                sh 'venv/bin/python tests/test_app.py'
+                sh 'venv/bin/python -m tests/test_app.py'
             }
         }
     }
