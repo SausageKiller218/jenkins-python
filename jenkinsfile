@@ -1,0 +1,21 @@
+pipeline {
+    agent {
+        docker { image 'python:3.12-slim' }
+    }
+    options {
+        skipDefaultCheckout(true)
+    }
+    stages {
+        stage('checkout'){
+            steps {
+                checkout scm
+                sh 'ls -la'
+            }
+        }
+        stage('build') {
+            steps {
+                sh 'pip install flask waitress pywebview'
+            }
+        }
+    }
+}
