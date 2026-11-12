@@ -43,7 +43,7 @@ def client(monkeypatch):
 def test_home_page(client):
     response = client.get("/")
 
-    assert response.status_code == 200
+    assert response.status_code == 404 # broken for testing jenkins, fix to 200 later
     assert b"AGL Predictor" in response.data
 
 
