@@ -21,8 +21,13 @@ pipeline {
         }
         stage('test') {
             steps {
-                sh 'venv/bin/python -m pytest tests/ -v'
+                sh 'venv/bin/python -m pytest tests/ -v --junit-xml=build/reports/report.xml'
             }
+        }
+    }
+    post {
+        always {
+            junit 'build/reports/jenkins-python/*.xml'
         }
     }
 }
