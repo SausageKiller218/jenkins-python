@@ -16,7 +16,7 @@ pipeline {
             steps {
                 sh 'python -m venv venv'
                 sh 'venv/bin/python -V'
-                sh 'venv/bin/python -m pip install -r requirments.txt'
+                sh 'venv/bin/python -m pip install -r requirements.txt'
             }
         }
         stage('test') {
