@@ -6,7 +6,6 @@ from types import ModuleType
 
 import pytest
 
-
 @pytest.fixture
 def client(monkeypatch):
     # Подменяем тяжёлый модуль нейросети

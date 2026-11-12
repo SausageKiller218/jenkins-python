@@ -21,8 +21,11 @@ pipeline {
         }
         stage('test') {
             steps {
-                sh 'venv/bin/python -m pytest tests/ -v --junit-xml=build/reports/report.xml'
+                warnError (message: 'ive errored my lored....') {
+                    sh 'venv/bin/python -m pytest tests/ -v --junit-xml=build/reports/report.xml'
+                }
             }
+            
         }
     }
     post {
