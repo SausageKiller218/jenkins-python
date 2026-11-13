@@ -3,7 +3,7 @@ pipeline {
         docker { image 'python:3.12-slim' }
     }
     triggers { 
-        pollSCM('*/5 * * * *') 
+        pollSCM('H/5 * * * *') 
     }
     options {
         skipDefaultCheckout(true)
